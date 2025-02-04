@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>Homework 1</title>
+<style type="text/css">
+	body {
+		background-image: url('Images/starryBg.png');
+	}
+	h1 {
+		color: #ffcc66;
+		font-family: "verdana";
+		font-size: 300%;
+		text-align:center
+	}
+	h2 {
+		color: white;
+		font-family: "verdana";
+		font-size: 150%;
+		text-align:center
+	}
+	p {
+	color: white;
+	font-family: "verdana";
+	font-size: 100%;
+	}
+	a:link {
+	  color: #ffcc66;
+	  text-decoration: none;
+	}
+
+	a:visited {
+	  color: #b3b300;
+	  text-decoration: none;
+	}
+
+	a:hover {
+	  color: red;
+	}
+
+	a:active {
+	  color: yellow;
+	}
+
+	ul {
+	  list-style-type: none;
+	  margin: 0;
+	  padding: 0;
+	  overflow: hidden;
+	  background-color: #333333;
+	  font-family: "verdana";
+	}
+
+	li {
+	  float: left;
+	}
+
+	li a {
+	  display: block;
+	  color: white;
+	  text-align: center;
+	  padding: 16px;
+	  text-decoration: none;
+	}
+
+	li a:hover {
+	  background-color: #111111;
+	}
+	/*https://coder-coder.com/display-divs-side-by-side/*/
+	.flex-container {
+	    display: flex;
+	}
+	.flex-child {
+	    flex: 1;
+/*	    border: 1px solid yellow;*/
+	}  
+	.flex-child:first-child {
+	    margin-right: 4px;
+	} 
+
+	.grid-container {
+  display: grid;
+  grid-template-columns: 30% 50%;
+	}
+
+	.container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "menu content"
+    "footer footer";
+  grid-template-columns: 1fr 3fr;
+  gap: 10px;
+/*  background-color: #2196F3;*/
+  padding: 5px;
+	}
+	
+	.container > div {
+	  background-color: rgba(255, 255, 255, 0.8);
+	  padding: 20px;
+	}
+	.container > div.header {
+	  grid-area: header;
+	  text-align: center;
+	}
+	.container > div.menu {
+	  grid-area: menu;
+	}
+	.container > div.content {
+	  grid-area: content;
+	}
+	.container > div.footer {
+	  grid-area: footer;
+	}
+</style>
+</head>
+<body>
+<!-- TITLE HEADER AREA -->
+<div style="width: 100%">
+	<!-- <img src="Images/sunIcon.png" alt="SunIcon" style="float:left;width:170px;height:170px;margin-right:15px;"> -->
+	<h1 style="margin-top: 80px;">Solar System</h1>
+</div>
+
+<!-- NAVBAR AREA -->
+
+<ul>
+  <li><a href="http://localhost:8888/eelizabethriley.github.io/CSC209/Lab/">Labs</a></li>
+  <li><a href="http://localhost:8888/eelizabethriley.github.io/CSC209/Hwk/">Homework</a></li>
+</ul> 
+
+<!-- INFORMATION BLOCK AREA -->
+
+<div class="flex-container">
+  <div class="flex-child left">
+    <p style="	
+    text-align:center;
+	border-radius: 10px;
+	background-color: #2A257F;
+	padding: 15px;
+	">Mercury</p>
+  </div>
+  <div class="flex-child right">
+  	<h2>Homework 1</h2>
+    <p style="	
+    text-align:justify;
+	border-radius: 10px;
+	background-color: #090640;
+	padding: 30px;
+	">The HTML tutorials took me 3 hrs to complete, the technical component took 2 hours, and the creative component took 2 hours. Here is a diagram of the Solar System, click on any planet.</p>
+	<img src="Images/solarSystemDiagram.png" alt="Solar System" usemap="#planetmap">
+
+	<map name="planetmap">
+		<area shape="circle" coords="45,358,22.5" alt="Neptune" href="https://en.wikipedia.org/wiki/Sun">
+		<area shape="circle" coords="84,279,24" alt="Saturn" href="https://en.wikipedia.org/wiki/Sun">
+		<area shape="circle" coords="197,307,15" alt="Mars" href="https://en.wikipedia.org/wiki/Sun">
+		<area shape="circle" coords="245,247,16.5" alt="Venus" href="https://en.wikipedia.org/wiki/Sun">
+	  <area shape="circle" coords="349,244,46" alt="Sun" href="https://en.wikipedia.org/wiki/Sun">
+	  <area shape="circle" coords="421,215,11.5" alt="Mercury" href="https://en.wikipedia.org/wiki/Sun">
+	  <area shape="circle" coords="483,244,17" alt="Earth" href="https://en.wikipedia.org/wiki/Sun">
+	  <area shape="circle" coords="574,170,26" alt="Jupiter" href="https://en.wikipedia.org/wiki/Sun">
+	  <area shape="circle" coords="636,230,21" alt="Uranus" href="https://en.wikipedia.org/wiki/Sun">
+	</map>
+  </div>
+</div>
+</div>
+
+<div class="grid-container" style="margin: auto;">
+
+<div style="background-color:#2A257F;">
+  <p>Mercury</p>
+</div>
+
+<div style="background-color:#090640;">
+  	<h2>Homework 1</h2>
+    <p style="	
+    text-align:justify;
+	border-radius: 10px;
+	background-color: #090640;
+	padding: 30px;
+	">The HTML tutorials took me 3 hrs to complete, the technical component took 2 hours, and the creative component took 2 hours. Here is a diagram of the Solar System, click on any planet.</p>
+	<img src="Images/solarSystemDiagram.png" alt="Solar System" usemap="#planetmap">
+
+	<map name="planetmap">
+		<area shape="circle" coords="45,358,22.5" alt="Neptune" href="https://en.wikipedia.org/wiki/Sun">
+		<area shape="circle" coords="84,279,24" alt="Saturn" href="https://en.wikipedia.org/wiki/Sun">
+		<area shape="circle" coords="197,307,15" alt="Mars" href="https://en.wikipedia.org/wiki/Sun">
+		<area shape="circle" coords="245,247,16.5" alt="Venus" href="https://en.wikipedia.org/wiki/Sun">
+	  <area shape="circle" coords="349,244,46" alt="Sun" href="https://en.wikipedia.org/wiki/Sun">
+	  <area shape="circle" coords="421,215,11.5" alt="Mercury" href="https://en.wikipedia.org/wiki/Sun">
+	  <area shape="circle" coords="483,244,17" alt="Earth" href="https://en.wikipedia.org/wiki/Sun">
+	  <area shape="circle" coords="574,170,26" alt="Jupiter" href="https://en.wikipedia.org/wiki/Sun">
+	  <area shape="circle" coords="636,230,21" alt="Uranus" href="https://en.wikipedia.org/wiki/Sun">
+	</map>
+</div>
+</div>
+
+<div class="container">
+  <div class="header"><h2>My Header</h2></div>
+  <div class="menu"><a href="#">Link 1</a><br><a href="#">Link 2</a><br><a href="#">Link 3</a></div>
+  <div class="content"><h3>Lorem Ipsum</h3><p>Lorem ipsum odor amet, consectetuer adipiscing elit. Ridiculus sit nisl laoreet facilisis aliquet. Potenti dignissim litora eget montes rhoncus sapien neque urna. Cursus libero sapien integer magnis ligula lobortis quam ut.</p></div>
+  <div class="footer"><h4>Footer</h4></div>
+</div>
+
+</body>
+</html>
