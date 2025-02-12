@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link id="styleSheet" rel="stylesheet" href="StyleSheets/lightMode.css">
+	<title>Homework 2: Technical</title>
+</head>
+<body>
+<!-- Left Sidebar -->
+<div class="row">
+  <div class="side">
+    <h2>Overview</h2>
+<ul class ="sideNav">
+  <li><a href="../hw2.html">Home</a></li>
+  <li><a href="Pages/playlist.html">Playlist</a></li>
+  <li><a href="https://open.spotify.com/">Spotify</a></li>
+  <li><a href="https://genius.com/">Genius</a></li>
+</ul>
+    <br>
+    <h3>Change Theme</h3>
+    <p>Click the icons below to swap between light mode and dark mode.</p>
+    <div><button class="icon" onclick="document.getElementById('styleSheet').href='StyleSheets/lightMode.css'"><img src="Images/sunIconDark.png" alt="Light Mode" style="width:30px;height:30px;"></button><button class="icon" onclick="document.getElementById('styleSheet').href='StyleSheets/darkMode.css'"><img src="Images/moonIconDark.png" alt="Dark Mode" style="width:30px;height:30px;"></button>
+    </div>
+
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
+    <h2>FEBRUARY TRACKS <img class="floatRight" src="Images/spotifyLogo.png" alt="Spotify Logo" style="width:70px;height:70px;margin-left:15px;"></h2>
+    <div id="buttonBox"><button type="button" class = "clickMe" onclick="document.getElementById('readMore').style.display='block'">Read More</button>
+    <p id="readMore" style="display:none">The table below displays some of my top songs on Spotify this month. Click the number in the "Lyrics" column to visit that page.</p></div>
+    <table>
+ <tr>
+    <th>Artist</th>
+    <th>Song</th> 
+    <th>Album</th>
+    <th>Lyrics</th>
+  </tr>
+  <tr>
+    <td>Yola</td>
+    <td>Stand For Myself</td>
+    <td>Stand For Myself</td>
+    <td><a href="Pages/standForMyself.html">1</a></td>
+  </tr>
+  <tr>
+    <td>Caroline Rose</td>
+    <td>Blood on Your Bootheels</td>
+    <td>I Will Not Be Afraid</td>
+    <td><a href="Pages/bloodOnYourBootheels.html">2</a></td>
+  </tr>
+  <tr>
+    <td>JOSEPH</td>
+    <td>Presence</td>
+    <td>Good Luck, Kid</td>
+    <td><a href="Pages/presence.html">3</a></td>
+  </tr>
+  <tr>
+    <td>Rachel Chinouriri</td>
+    <td>Never Need Me</td>
+    <td>What A Devastating Turn of Events</td>
+    <td><a href="Pages/neverNeedMe.html">4</a></td>
+  </tr>
+  <tr>
+    <td>Weyes Blood</td>
+    <td>Bad Magic</td>
+    <td>The Innocents</td>
+    <td><a href="Pages/badMagic.html">5</a></td>
+  </tr>
+</table>
+  </div>
+</div>
+<div class="footer">
+  <ul>
+  <li><a href="../hw2.html">Home</a></li>
+</ul>
+</div>
+</body>
+</html>

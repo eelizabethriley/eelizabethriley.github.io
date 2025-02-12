@@ -1,0 +1,33 @@
+body {
+  background-color: #85B280;
+}
+h1 {
+  color: orange;
+  font-family: "verdana";
+  font-size: 200%;
+  text-align: center;
+}
+p {
+  color: black;
+  font-family: "courier";
+  font-size: 100%;
+  padding: 5px;
+  margin: 10px;
+  border: 2px dotted orange;
+}
+
+.important {
+  font-size: 120%;
+  font-family: "verdana";
+  color: red;
+  text-decoration: underline;
+}
+
+#blueText {
+	color:blue;
+}
+
+#hugeText {
+	font-size: 100px;
+	text-decoration: underline;
+}
