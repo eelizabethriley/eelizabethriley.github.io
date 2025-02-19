@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript switch</h2>
+
+<p id="demo"></p>
+
+<script>
+let month;
+switch (new Date().getMonth()) {
+  case 0:
+    month = "January";
+    break;
+  case 1:
+    month = "February";
+    break;
+  case 2:
+    month = "March";
+    break;
+  case 3:
+    month = "April";
+    break;
+  case 4:
+    month = "May";
+    break;
+  case 5:
+    month = "June";
+    break;
+  case  6:
+    month = "July";
+  case  7:
+    month = "August";
+  case  8:
+    month = "September";
+  case  9:
+    month = "October";
+  case  10:
+    month = "November";
+  case  11:
+    month = "December";
+}
+document.getElementById("demo").innerHTML = "The month is " + month;
+</script>
+
+</body>
+</html>

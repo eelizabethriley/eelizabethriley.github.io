@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Variables</h1>
+
+<p>Create a variable, assign a value to it, and display it:</p>
+
+<p id="demo"></p>
+
+<script>
+let className = "CSC209";
+document.getElementById("demo").innerHTML = className;
+</script>
+
+<p>The dollar sign is treated as a letter in JavaScript names.</p>
+
+<p id="demo2"></p>
+
+<script>
+let $$$ = 2;
+let $myMoney = 5;
+document.getElementById("demo2").innerHTML = $$$ + $myMoney;
+</script>
+
+<h2>JavaScript const</h2>
+
+<p>Declaring a constant array does NOT make the elements unchangeable:</p>
+
+<p id="demo3"></p>
+
+<script>
+// Create an Array:
+const cars = ["Saab", "Volvo", "BMW"];
+
+// Change an element:
+cars[0] = "Toyota";
+
+// Add an element:
+cars.push("Audi");
+
+// Display the Array:
+document.getElementById("demo3").innerHTML = cars; 
+</script>
+
+<p>Declaring a constant object does NOT make the objects properties unchangeable:</p>
+
+<p id="demo4"></p>
+
+<script>
+// Create an object:
+const car = {type:"Fiat", model:"500", color:"white"};
+
+// Change a property:
+car.color = "red";
+
+// Add a property:
+car.owner = "Johnson";
+
+// Display the property:
+document.getElementById("demo4").innerHTML = "Car owner is " + car.owner; 
+</script>
+
+<h1>JavaScript Arithmetic</h1>
+<h2>Arithmetic Operations</h2>
+<p>A typical arithmetic operation takes two numbers (or expressions) and produces a new number.</p>
+
+<p id="demo5"></p>
+
+<script>
+let a = 2;
+let x = (333 + 50) % a;
+document.getElementById("demo5").innerHTML = x;
+</script>
+
+</body>
+</html>

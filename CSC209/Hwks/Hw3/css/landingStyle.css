@@ -1,0 +1,104 @@
+body {
+	background-color: #3E3E3E;
+}
+h1 {
+	color: #F287E5;
+	font-family: "verdana";
+	font-size: 200%;
+	text-align:center
+}
+p {
+	color: white;
+	font-family: "verdana";
+	font-size: 100%;
+}
+
+a {
+  font-family: "verdana";
+}
+
+a:link {
+  color: #F287E5;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.sideBar{
+  ul {
+    list-style-type: none;
+    font-family: "verdana";
+    color: white;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  li a {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+
+  /* Change the link color on hover */
+  li a:hover {
+    background-color: #507F49;
+    color: white;
+  }
+}
+
+
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+}
+
+/* Left and right column */
+.column.side {
+  width: 30%;
+  background-color: #5F9957;
+  color: white;
+}
+
+/* Middle column */
+.column.middle {
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.footer {
+  padding: 20px; /* Some padding */
+  text-align: center; /* Center text*/
+  background: #252525; /* Grey background */
+  h2 {
+    font-size: 20px;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    display: inline;
+  }
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+}
