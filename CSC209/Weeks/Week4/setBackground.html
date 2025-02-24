@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>Tutorial: Set Background Color</title>
+<style>
+
+	h1 {
+/*		color: black;*/
+		font-family: "Monaco", "Courier New", monospace;
+		font-size: 200%;
+		text-align:center
+	}
+	p {
+		color: black;
+		font-family: "Monaco", "Courier New", monospace;
+		text-align: center;
+	}
+
+</style>
+</head>
+<body id="pageBody">
+<h1 id="myH1">Color Input Event</h1>
+<p>Select a color to set the background color of the page.</p>
+
+<input type="color" id="myColor">
+
+<button onclick="setColor()">Submit</button>
+
+<p id="hex"></p>
+
+</div>\
+
+<script type="text/javascript">
+	function getColor() {
+	  var x = document.getElementById("myColor").value;
+	  document.getElementById("hex").innerHTML = x;
+	  return x;
+	}
+
+	function setColor() {
+		x = getColor();
+		document.getElementById("pageBody").style.backgroundColor = x;
+	}
+</script>
+</body>
+</html>

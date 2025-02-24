@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link id="styleSheet" rel="stylesheet" href="css/animationStyle.css">
+        <title>Animation</title>
+        <script>
+            var squareColors = ["red", "blue", "green", "purple"];
+            // Top is 0px, bottom is 400px (height of canvas)
+            var positionsVertical = ["top", "top", "bottom", "bottom"];
+            // Left is 0px, right is 400px (width of canvas - width of square)
+            var positionsHorizontal = ["left", "right", "left", "right"];
+            var direction = [];
+            const NUM_SQUARES = squareColors.length;
+        </script>
+        <script src="js/animation.js"></script>
+    </head>
+    <body>
+        <!-- Overall square controls -->
+        <label for="squareSpeed">Square speed</label>
+        <select id="squareSpeed">
+            <option value=30>Slow</option>
+            <option value=20>Medium</option>
+            <option value=10>Fast</option>
+        </select>
+        <button id="moveBtn" onclick="moveSquares();">Move squares</button> <br><br> 
+        <!-- Red square controls -->
+        <label for="redSpeed">Red square speed</label>
+        <select id="redSpeed">
+            <option value=30>Slow</option>
+            <option value=20>Medium</option>
+            <option value=10>Fast</option>
+        </select>
+        <button id="moveRedBtn" onclick="moveRed();">Move red square</button> <br><br> 
+        <!-- Blue square controls -->
+        <label for="blueSpeed">Blue square speed</label>
+        <select id="blueSpeed">
+            <option value=30>Slow</option>
+            <option value=20>Medium</option>
+            <option value=10>Fast</option>
+        </select>
+        <button id="moveBlueBtn" onclick="moveBlue();">Move blue square</button> <br><br>  
+        <div id ="squareContainer">
+            <div class = "square" id ="blueSq"></div>
+            <div class = "square" id ="redSq"></div>
+            <script>
+                createSquares();
+                // createControls();
+            </script>
+        </div>
+    </body>
+</html>
