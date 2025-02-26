@@ -7,11 +7,8 @@
         <title>Animation</title>
         <script>
             var squareColors = ["red", "blue", "green", "purple"];
-            // Top is 0px, bottom is 400px (height of canvas)
-            var positionsVertical = ["top", "top", "bottom", "bottom"];
-            // Left is 0px, right is 400px (width of canvas - width of square)
-            var positionsHorizontal = ["left", "right", "left", "right"];
-            var direction = [];
+            var positionsVertical = ["0", "0", "350", "350"];
+            var positionsHorizontal = ["0", "350", "0", "350"];
             const NUM_SQUARES = squareColors.length;
         </script>
         <script src="js/animation.js"></script>
@@ -26,27 +23,26 @@
         </select>
         <button id="moveBtn" onclick="moveSquares();">Move squares</button> <br><br> 
         <!-- Red square controls -->
-        <label for="redSpeed">Red square speed</label>
+<!--         <label for="redSpeed">Red square speed</label>
         <select id="redSpeed">
             <option value=30>Slow</option>
             <option value=20>Medium</option>
             <option value=10>Fast</option>
         </select>
-        <button id="moveRedBtn" onclick="moveRed();">Move red square</button> <br><br> 
+        <button id="moveRedBtn" onclick="moveRed();">Move red square</button> <br><br>  -->
         <!-- Blue square controls -->
-        <label for="blueSpeed">Blue square speed</label>
+<!--         <label for="blueSpeed">Blue square speed</label>
         <select id="blueSpeed">
             <option value=30>Slow</option>
             <option value=20>Medium</option>
             <option value=10>Fast</option>
         </select>
-        <button id="moveBlueBtn" onclick="moveBlue();">Move blue square</button> <br><br>  
+        <button id="moveBlueBtn" onclick="moveBlue();">Move blue square</button> <br><br>   -->
         <div id ="squareContainer">
-            <div class = "square" id ="blueSq"></div>
-            <div class = "square" id ="redSq"></div>
+<!--             <div class = "square" id ="blueSq"></div>
+            <div class = "square" id ="redSq"></div> -->
             <script>
                 createSquares();
-                // createControls();
             </script>
         </div>
     </body>

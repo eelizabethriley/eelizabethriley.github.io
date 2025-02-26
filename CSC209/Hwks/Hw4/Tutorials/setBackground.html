@@ -5,7 +5,6 @@
 <style>
 
 	h1 {
-/*		color: black;*/
 		font-family: "Monaco", "Courier New", monospace;
 		font-size: 200%;
 		text-align:center
@@ -28,9 +27,11 @@
 
 <p id="hex"></p>
 
+
+White heading: <input onclick="getCheck()" type="checkbox" id="whiteCheck">
+Black heading: <input onclick="getCheck()" type="checkbox" id="blackCheck">
 </div>
 
-<!-- 	body { background-color: white; } -->
 
 <script type="text/javascript">
 	function getColor() {
@@ -43,6 +44,22 @@
 		x = getColor();
 		document.getElementById("pageBody").style.backgroundColor = x;
 	}
+
+	function getCheck() {
+	  var x = document.getElementById("whiteCheck");
+	  var y = document.getElementById("blackCheck");
+	  if (x.checked == true){
+	  	setText("white");
+	  }
+	  else {
+	  	setText("black");
+	  }
+	}
+
+	function setText(color){
+		document.getElementById("myH1").style.color = color;
+	}
+
 </script>
 </body>
 </html>
