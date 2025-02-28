@@ -32,6 +32,7 @@ function moveSquare(color){
     //Strip "px" ending from the position to convert to a number
     squarePos = squarePos.slice(0, squarePos.length-2);
     console.log("pos", squarePos);
+    clearInterval(stepId); // stop moving/calling function
     var stepId;
     switch(squarePos){
       case "0":
