@@ -6,28 +6,7 @@ function Particle(x, y, vector, color) {
   this.color = color;
   this.origin = [x, y];
   this.direction = ["vertical", "horizontal"];
-  switch (vector[0]){
-    case 10:
-        this.direction[0] = "down";
-        break;
-    case -10:
-        this.direction[0] = "up";
-        break;
-    default:
-        console.log("Vector error.")
-        break;
-  }
-  switch (vector[1]){
-    case 10:
-        this.direction[1] = "right";
-        break;
-    case -10:
-        this.direction[1] = "left";
-        break;
-    default:
-        console.log("Vector error.")
-        break;
-  }
+  setDirection(this);
   drawParticle(x, y, vector, color);
 }
 
@@ -43,6 +22,55 @@ function setNumber(){
     }
     NRPTS = current;
     drawParticles();
+}
+
+function setTrace(){
+    TRACE = document.getElementById("myCheck").checked;
+}
+
+function setBackground(){
+    let background = document.getElementById("myBgCheck").checked;
+    if (background){
+        console.log("background")
+        document.getElementById("myCanvas").style.backgroundImage = "url(Images/sunset.jpg)";
+    }
+    else {
+        document.getElementById("myCanvas").style.backgroundImage = null;
+    }
+}
+
+function stopAnimation(){
+    STOP = true;
+}
+
+function setDirection(point){
+      switch (point.vector[0]){
+        case 10:
+            point.direction[0] = "down";
+            break;
+        case -10:
+            point.direction[0] = "up";
+            break;
+        default:
+            console.log("Vector error.")
+            break;
+      }
+      switch (point.vector[1]){
+        case 10:
+            point.direction[1] = "right";
+            break;
+        case -10:
+            point.direction[1] = "left";
+            break;
+        default:
+            console.log("Vector error.")
+            break;
+    }
+}
+
+function getSpeed() {
+    var speed = document.getElementById("speed").value;
+    return speed;
 }
 
 // Generate random x and y coordinates within the canvas dimensions
@@ -86,19 +114,7 @@ function drawParticle(x, y, vector, color){
 	ctx.stroke();
 }
 
-function createParticles(n){
-    ctx.clearRect(0, 0, width, height);
-    for (var i = 0; i < NRPTS; i++) {
-        let radius = 10;
-        let x = randomizePos()[0];
-        let y = randomizePos()[1];
-        let vector = randomizeVector(radius);
-        let color = getRandomColor();
-        let point = new Particle(x, y, vector, color);
-        points.push(point);
-        console.log(points);
-    }
-}
+
 
 // Add a new particle object to the array of points, update NRPTS
 function addParticle(){
@@ -133,12 +149,15 @@ function drawParticles(){
     }
 }
 
+// Update the particles with a new random position
 function randomizeParticles(){
     for (var i = 0; i < points.length; i++) {
         let point = points[i];
         let pos = randomizePos();
         point.x = pos[0];
         point.y = pos[1];
+        point.origin[0] = point.x;
+        point.origin[1] = point.y;
     }  
     ctx.clearRect(0, 0, width, height);
     drawParticles();
@@ -146,10 +165,10 @@ function randomizeParticles(){
 
 // Return true when coordinates are within canvas bounds
 function checkInBounds(x, y){
-    if (x >= width || y >= height){
+    if (x >= width-20 || y >= height-20){
         return false;
     }
-    if (x <= 0 || y <= 0){
+    if (x <= 20 || y <= 20){
         return false;
     }
     return true;
@@ -157,11 +176,17 @@ function checkInBounds(x, y){
 
 // Change vector direction
 function reflect(point){
-
-    point.vector[0] *= -1;
-    point.vector[1] *= -1; 
+    if (point.x == width || point.x == 0){
+        point.vector[0] *= -1;
+        setDirection(point);
+    }
+    if (point.y == height || point.y ==0){
+        point.vector[1] *= -1; 
+        setDirection(point);
+    }
 }
 
+// Update position of the given point based on its vector direction
 function movePoint(point){
     if (point.direction[0]== "down"){
         point.x ++;
@@ -177,20 +202,23 @@ function movePoint(point){
     }
 }
 
+// Animate each of the particles
 function moveParticles(){
+    STOP = false;
     var stepId;
     var counter = 0;
     clearInterval(stepId);
-    stepId = setInterval(stepPoints, NRSTEPS);
+    stepId = setInterval(stepPoints, getSpeed());
     function stepPoints(){
-        if (counter == NRSTEPS){
+        if (counter == NRSTEPS || STOP){
             clearInterval(stepId);
         }
-        ctx.clearRect(0, 0, width, height);
+        if (TRACE == false){
+            ctx.clearRect(0, 0, width, height);
+        }
         counter ++
         for (var i = 0; i < points.length; i++){
             let point = points[i];
-            console.log("step");
             if (checkInBounds(point.x, point.y) == false){
                 // Check collision with boundary and reflect
                 reflect(point);
@@ -199,4 +227,14 @@ function moveParticles(){
             drawParticles();
         }
     }
+}
+
+function resetPoints(){
+    ctx.clearRect(0, 0, width, height);
+    for(var i = 0; i < points.length; i++){
+        var point = points[i];
+        point.x = point.origin[0];
+        point.y = point.origin[1];
+    }
+    drawParticles();
 }

@@ -29,7 +29,27 @@ input {
 	border-radius: 3px;
 }
 
+select {
+	border: 2px solid #bfbfbf;
+	border-radius: 3px;
+}
+
+
 #myCanvas {
 	border: 3px solid #bfbfbf;
-	border-radius: 4px;
+	background-color: white;
+}
+
+/* The container */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }

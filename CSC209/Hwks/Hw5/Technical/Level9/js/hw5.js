@@ -45,6 +45,11 @@ function setNumber(){
     drawParticles();
 }
 
+function setTrace(){
+    TRACE = document.getElementById("myCheck").checked;
+    console.log(TRACE);
+}
+
 // Generate random x and y coordinates within the canvas dimensions
 function randomizePos(){
 	let x = Math.floor((Math.random() * width) + 0);
@@ -86,20 +91,6 @@ function drawParticle(x, y, vector, color){
 	ctx.stroke();
 }
 
-function createParticles(n){
-    ctx.clearRect(0, 0, width, height);
-    for (var i = 0; i < NRPTS; i++) {
-        let radius = 10;
-        let x = randomizePos()[0];
-        let y = randomizePos()[1];
-        let vector = randomizeVector(radius);
-        let color = getRandomColor();
-        let point = new Particle(x, y, vector, color);
-        points.push(point);
-        console.log(points);
-    }
-}
-
 // Add a new particle object to the array of points, update NRPTS
 function addParticle(){
     let radius = 10;
@@ -133,12 +124,15 @@ function drawParticles(){
     }
 }
 
+// Update the particles with a new random position
 function randomizeParticles(){
     for (var i = 0; i < points.length; i++) {
         let point = points[i];
         let pos = randomizePos();
         point.x = pos[0];
         point.y = pos[1];
+        point.origin[0] = point.x;
+        point.origin[1] = point.y;
     }  
     ctx.clearRect(0, 0, width, height);
     drawParticles();
@@ -157,11 +151,11 @@ function checkInBounds(x, y){
 
 // Change vector direction
 function reflect(point){
-
     point.vector[0] *= -1;
     point.vector[1] *= -1; 
 }
 
+// Update position of the given point based on its vector direction
 function movePoint(point){
     if (point.direction[0]== "down"){
         point.x ++;
@@ -177,26 +171,39 @@ function movePoint(point){
     }
 }
 
+// Animate each of the particles
 function moveParticles(){
     var stepId;
     var counter = 0;
     clearInterval(stepId);
-    stepId = setInterval(stepPoints, NRSTEPS);
+    stepId = setInterval(stepPoints, 10);
     function stepPoints(){
         if (counter == NRSTEPS){
             clearInterval(stepId);
         }
-        ctx.clearRect(0, 0, width, height);
+        if (TRACE == false){
+            ctx.clearRect(0, 0, width, height);
+        }
         counter ++
         for (var i = 0; i < points.length; i++){
             let point = points[i];
             console.log("step");
             if (checkInBounds(point.x, point.y) == false){
                 // Check collision with boundary and reflect
-                reflect(point);
+                // reflect(point);
             }
             movePoint(point);
             drawParticles();
         }
     }
+}
+
+function resetPoints(){
+    ctx.clearRect(0, 0, width, height);
+    for(var i = 0; i < NRPTS; i++){
+        var point = points[i];
+        point.x = point.origin[0];
+        point.y = point.origin[1];
+    }
+    drawParticles();
 }
