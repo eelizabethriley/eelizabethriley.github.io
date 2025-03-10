@@ -72,7 +72,6 @@ function createMatrix(n, m){
 			matrix[i][j] = new Cell(0, x, y, cellSize, i, j);
 		}
 	}
-	console.log(matrix);
 	return matrix;
 }
 
@@ -80,7 +79,7 @@ function createMatrix(n, m){
 function createCanvas(){
 	columns = Math.floor(width/10);
 	rows = Math.floor(height/10);
-	cellSize = Math.min(width/columns, height/rows);
+	cellSize = Math.max(width/columns, height/rows);
 	grid = createMatrix(rows, columns);
 }
 
@@ -137,9 +136,30 @@ function randomizeGrid(){
 	drawGrid();
 }
 
-// Apply rules to cells and iterate to the next generation 
+function stopGame(){
+	let genId;
+	play = false;
+	clearInterval(genId);
+}
+
+function playGame(){
+	let genId;
+	clearInterval(genId);
+	play = true;
+}
+
 function progressGame(){
+	let genId = setInterval(progressGeneration, 180);
+}
+
+// Apply rules to cells and iterate to the next generation 
+function progressGeneration(){
 	// Iterate through each cell in the grid
+	if (play == false){
+		let genId;
+		clearInterval(genId);
+		return;
+	}
 	for (var i = 0; i < rows; i++){
 		for (var j = 0; j < columns; j++){
 			// Count live neighbors
@@ -223,7 +243,6 @@ function checkRight(cell){
 	switch(cell.position[1]){
 		case "top": case "center":
 			if (grid[i+1][j+1].state == 1){
-				console.log("counted");
 				count ++;
 			}
 			break;

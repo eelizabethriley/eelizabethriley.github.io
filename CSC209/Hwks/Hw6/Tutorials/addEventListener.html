@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The Document Object</h1>
+<h2>The addEventListener() Method</h2>
+
+<p>This example adds many events on the document.</p>
+
+<p id="demo"></p>
+
+<script>
+document.addEventListener("mouseover", myFunction);
+document.addEventListener("click", mySecondFunction);
+document.addEventListener("mouseout", myThirdFunction);
+
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Moused over!"
+}
+
+function mySecondFunction() {
+  document.getElementById("demo").innerHTML = "Clicked!<br>"
+}
+
+function myThirdFunction() {
+  document.getElementById("demo").innerHTML = "Moused out!<br>"
+}
+</script>
+
+</body>
+</html>

@@ -23,8 +23,10 @@
 	<button id="randomButton" onclick="randomizeGrid();">Randomize</button> 
 	<button id="invertButton" onclick="invertGrid();">Invert</button> 
 	<button id="clearButton" onclick="clearGrid();">Clear</button> 
-	<button id="clearButton" onclick="progressGame();">Next</button> 
+	<button id="clearButton" onclick="playGame();progressGeneration();stopGame();">Next</button> 
 	<br>
+	<button id="clearButton" onclick="playGame();progressGame();">Play</button> 
+	<button id="clearButton" onclick="stopGame();">Stop</button> 
 	<!-- Javascript -->
 	<script src="js/gameOfLife.js"></script>
 	<script type="text/javascript">
@@ -32,17 +34,11 @@
 		const ctx = canvas.getContext("2d");
 		let width = canvas.width;
 		let height = canvas.height;
-		// const cellSize = 25;
-		// const columns = width/cellSize;
-		// const rows = height/cellSize;
 		let columns = Math.floor(width/10);
 		let rows = Math.floor(height/10);
 		let cellSize = Math.min(width/columns, height/rows);
-		console.log("num", columns, rows);
-		// var columns = document.getElementById("widthRange").value;
-		// var rows = document.getElementById("widthRange").value;
-		// const cellSize = width/columns;
 		let grid = createMatrix(rows, columns);
+		let play = false;
 		drawGrid();
 	</script>
 </body>
