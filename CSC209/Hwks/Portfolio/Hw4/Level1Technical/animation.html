@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link id="styleSheet" rel="stylesheet" href="css/animationStyle.css">
+        <title>Animation</title>
+    </head>
+    <body>
+        <!-- Red square controls -->
+        <label for="redSpeed">Red square speed</label>
+        <select id="redSpeed">
+            <option value=30>Slow</option>
+            <option value=20>Medium</option>
+            <option value=10>Fast</option>
+        </select>
+        <button id="moveRedBtn" onclick="moveRed();">Move red square</button> <br><br> 
+        <!-- Blue square controls -->
+        <label for="blueSpeed">Blue square speed</label>
+        <select id="blueSpeed">
+            <option value=30>Slow</option>
+            <option value=20>Medium</option>
+            <option value=10>Fast</option>
+        </select>
+        <button id="moveBlueBtn" onclick="moveBlue()">Move blue square</button> <br><br>  
+        <div id ="myContainer">
+            <div id ="blueSq"></div>
+            <div id ="redSq"></div>
+        </div>
+
+    <script src="js/animation.js"></script>
+    </body>
+</html>

@@ -47,7 +47,6 @@ function setNumber(){
 
 function setTrace(){
     TRACE = document.getElementById("myCheck").checked;
-    console.log(TRACE);
 }
 
 // Generate random x and y coordinates within the canvas dimensions
@@ -101,7 +100,6 @@ function addParticle(){
     let point = new Particle(x, y, vector, color);
     points.push(point);
     NRPTS ++;
-    console.log(points);
 }
 
 // Pop a particle from our array of points and remove it from the canvas

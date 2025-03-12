@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/portfolio.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+</head>
+<body>
+<h1>CSC 209 Portfolio</h1>
+<button class="tablink" onclick="openPage('Homework1', this, 'orange')" id="defaultOpen">Homework 1</button>
+<button class="tablink" onclick="openPage('Homework2', this, 'orange')">Homework 2</button>
+<button class="tablink" onclick="openPage('Homework3', this, 'orange')">Homework 3</button>
+<button class="tablink" onclick="openPage('Homework4', this, 'orange')">Homework 4</button>
+<button class="tablink" onclick="openPage('Homework5', this, 'orange')">Homework 5</button>
+<button class="tablink" onclick="openPage('Homework6', this, 'orange')">Homework 6</button>
+
+<div id="Homework1" class="tabcontent">
+  <h3>Homework 1</h3>
+  <p>I created a website themed around the Solar System with several informational subpages or external links for each planet. The technical feature that I spent the most time on is the image map located in technical.html which links to each planet when you click on the defined area. Each page demonstrates different css styling techniques and experiments with basic features of web design. Originally this homework was submitted with a lot of broken absolute links which have now been updated with the correct relative links. The organization of the assignment has also been improved to separate most of the css into a separate, linked style sheet.</p>
+
+  <a href="Hw1/hw1.html">VIEW HERE: Homework 1</a>
+</div>
+
+<div id="Homework2" class="tabcontent">
+  <h3>Homework 2</h3>
+  <p>The technical work I did for this assignment was implementing a responsive, structured page with two stylesheets toggled by javascript buttons. Incorporating the proper javascript for this assignment was the most. I learned how to style the buttons with images so that I could create a custom button icon for the stylesheet toggles. I also spent a lot of time incorporating the responsive web layout techniques we learned to match the layout given in the example. I expanded on these techniques to create another multi-column webpage for my creative work.</p> 
+
+  <a href="Hw2/hw2.html">VIEW HERE: Homework 2</a>
+</div>
+
+<div id="Homework3" class="tabcontent">
+  <h3>Homework 3</h3>
+  <p>The main technique applied in my work was using JavaScript with the DOM hierarchy to create a dynamic slideshow. I also became more comfortable working with writing JavaScript functions and for my creative page I created a simple countdown to the last day of classes using datetime objects. I also experimented with JavaScript mouse events and using these to alter css styling on the page, allowing a "squishing" affect when mousing over the cat picture.</p>
+
+    <a href="Hw3/hw3.html">VIEW HERE: Homework 3</a>
+</div>
+
+<div id="Homework4" class="tabcontent">
+  <h3>Homework 4</h3>
+  <p>This homework continues building off of the work with DOM elements and JavaScript to produce a simple animation. The animation works with a dynamically allocated array of DOM elements rather than fixed, hardwired squares, and there is a basic GUI element to select the animation speed..</p>
+
+    <a href="Hw4/hw4.html">VIEW HERE: Homework 4</a>
+</div>
+
+<div id="Homework5" class="tabcontent">
+  <h3>Homework 5</h3>
+  <p>My final level 9 in the technical portion displays a functional interface for animating an input number of points with randomly generated colors and vector directions with a toggle for the tail to be shown or not. There is also a reset button that puts points back to their most recently generated coordinates from before they have been animated. In my creative portion, I expanded this program to include a speed for the animation and a toggle for a background image to be used or not, working with DOM to change the css styling. This was a skill that I learned how to do in my tutorials with the "setBackground" page.</p>
+    <a href="Hw5/hw5.html">VIEW HERE: Homework 5</a>
+</div>
+
+<div id="Homework6" class="tabcontent">
+  <h3>Homework 6</h3>
+  <p>This is my implementation of the Game of Life broken down into 4 layers of development. I was able to create a partially functional game using object oriented javascript programming and canvas graphics. A lot of time was spent developing the object oriented structure of the program so that the cells on the grid would be represented as members of a class with specific functions. One of the hardest ideas to implement was checking all neighbors without index errors or double-checking cells. In its current state there are still some logical bugs with the rules of the game. A feature that I am proud of is the dynamically resizeable canvas which has width and height sliders that can be set freely. I also implemented "play" and "stop" functionality and some extra buttons to randomize cells or invert their status. The canvas can also be cleared, setting all cells to dead. This assignment involved a culmination of JavaScript skills working together with HTML and CSS elements. I got in depth with Java classes and functions to complete this assignment.</p>
+
+    <a href="Hw6/hw6.html">VIEW HERE: Homework 6</a>
+</div>
+
+<script src="js/portfolio.js"></script>   
+</body>
+</html> 

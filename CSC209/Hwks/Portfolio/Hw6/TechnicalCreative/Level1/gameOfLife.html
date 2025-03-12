@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link id="styleSheet" rel="stylesheet" href="css/gameOfLife.css">
+</head>
+<body>
+	<h1>Game Of Life</h1>
+	<!-- Animation Controls -->
+	<canvas id="myCanvas" width=200 height=100>
+	Sorry, your browser does not support canvas.
+	</canvas>
+	<!-- Javascript -->
+	<script src="js/gameOfLife.js"></script>
+	<script type="text/javascript">
+		const canvas = document.getElementById("myCanvas");
+		const ctx = canvas.getContext("2d");
+		const width = canvas.width;
+		const height = canvas.height;
+		const cellSize = 25;
+		const columns = width/cellSize;
+		const rows = height/cellSize;
+		const grid = createMatrix(rows, columns);
+		drawGrid();
+	</script>
+</body>
+</html>

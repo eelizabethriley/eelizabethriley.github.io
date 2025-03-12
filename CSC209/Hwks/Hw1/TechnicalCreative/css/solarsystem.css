@@ -1,0 +1,99 @@
+body {
+background-image: url('../Images/starryBg.png');
+}
+
+h1 {
+color: #ffcc66;
+font-family: "verdana";
+font-size: 300%;
+text-align:center
+}
+
+h2 {
+color: white;
+font-family: "verdana";
+font-size: 150%;
+text-align:center
+}
+
+p {
+color: white;
+font-family: "verdana";
+font-size: 100%;
+text-align:justify;
+padding-left: 10%;
+padding-right: 10%;
+padding-bottom: 2%;
+}
+
+li a {
+display: block;
+padding: 10px 18px;
+text-decoration: none;
+}
+
+.navbar {
+list-style-type: none;
+margin: auto;
+width:80%;
+padding: 0;
+overflow: hidden;
+background-color: #ffcc66;
+font-family: "verdana";
+a:link {
+  color: #554FBD;
+  text-decoration: none;
+}
+a:hover {
+  color: white;
+}
+a {
+	color:#554FBD;
+}
+li {
+	float: left;
+	color: white;
+}
+}
+
+.sidebar {
+list-style-type: none;
+margin: 0;
+padding: 0;
+width: 100%;
+font-family: "verdana";
+a {
+	color:white;
+}
+
+li a:hover {
+  background-color: #554FBD;
+  color: #ffccs66;
+}
+}
+
+.grid-container {
+display: grid;
+max-width: 80%;
+grid-template-columns: 20% 80%;
+}
+
+table, th, td {
+  padding: 8px;
+  font-family: "verdana";
+  text-align: center;
+}
+
+tr:nth-child(odd) {
+	color: #554FBD;
+  background-color: #C4C1FB;
+}
+
+tr:nth-child(even) {
+  background-color: #554FBD;
+  color:white;
+}
+
+th,td {
+  border-radius: 3px;
+}

@@ -1,0 +1,136 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Courier New", monospace;
+  margin: 0;
+  background-color: #252525;
+  color: white;
+}
+
+.sideNav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  li a {
+    display: block;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  /* Change the link color on hover */
+  li a:hover {
+    background-color: #555;
+    color: white;
+  }
+}
+
+a:link {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+h1 {
+  color: white;
+  font-family: "Monaco", "Courier New", monospace;
+  font-size: 200%;
+}
+
+h2 {
+  color: white;
+  font-family: "Monaco", "Courier New", monospace;
+  font-size: 30px;
+  text-align: center;
+}
+table, th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+table {
+  width: 95%;
+}
+
+th {
+  background-color: #2EBD59;
+}
+
+.clickMe{
+  border: none;
+  padding: 4px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: green;
+}
+
+#buttonBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  border: none;
+  background: none;
+}
+
+.floatRight {
+  float: right;
+}
+
+/* Column container */
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  flex: 30%;
+  background-color: #2F2F2F;
+  padding: 20px;
+}
+
+/* Main column */
+.main {   
+  flex: 70%;
+  background-color: #404040;
+  padding: 20px;
+}
+
+.footer {
+  padding: 20px; /* Some padding */
+  text-align: center; /* Center text*/
+  background: #252525; /* Grey background */
+  h2 {
+    font-size: 20px;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    display: inline;
+  }
+}
+
+

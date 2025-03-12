@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link id="styleSheet" rel="stylesheet" href="css/gameOfLife.css">
+</head>
+<body>
+	<h1>Game Of Life</h1>
+	<!-- Size Controls -->
+	<div class="slidecontainer">
+		<label for="widthRange">Width:</label>
+  		<input type="range" min="100" max="1000" value="500" class="slider" id="widthRange">
+		<label for="heightRange">Height:</label>
+  		<input type="range" min="100" max="1000" value="500" class="slider" id="heightRange">
+  		<button id="widthButton" onclick="updateCanvas();">Set</button> <br>
+	</div>
+	<!-- Canvas -->
+	<canvas id="myCanvas" width=500 height=500>
+	Sorry, your browser does not support canvas.
+	</canvas>
+	<br>
+	<!--  Controls -->
+	<button id="randomButton" onclick="randomizeGrid();">Randomize</button> 
+	<button id="invertButton" onclick="invertGrid();">Invert</button> 
+	<button id="clearButton" onclick="clearGrid();">Clear</button> 
+	<button id="clearButton" onclick="playGame();progressGeneration();stopGame();">Next</button> 
+	<br>
+	<button id="clearButton" onclick="playGame();progressGame();">Play</button> 
+	<button id="clearButton" onclick="stopGame();">Stop</button> 
+	<!-- Javascript -->
+	<script src="js/gameOfLife.js"></script>
+	<script type="text/javascript">
+		const canvas = document.getElementById("myCanvas");
+		const ctx = canvas.getContext("2d");
+		let width = canvas.width;
+		let height = canvas.height;
+		let columns = Math.floor(width/10);
+		let rows = Math.floor(height/10);
+		let cellSize = Math.min(width/columns, height/rows);
+		let grid = createMatrix(rows, columns);
+		let play = false;
+		drawGrid();
+	</script>
+</body>
+</html>

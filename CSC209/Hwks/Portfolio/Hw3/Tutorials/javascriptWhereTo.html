@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<h1>Javascript Intro: Script Placement</h1>
+<h2>JavaScript in Body</h2>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = "My First JavaScript";
+</script>
+
+<h2>Demo External JavaScript</h2>
+
+<script>
+alert(9 + 10);
+</script>
+
+
+<p id="demo">A Paragraph.</p>
+
+<button type="button" onclick="myFunction()">Try it</button>
+
+<p>This example links to "external.js".</p>
+<p>(myFunction is stored in "external.js")</p>
+
+<script src="Scripts/external.js"></script>
+</body>
+</html>

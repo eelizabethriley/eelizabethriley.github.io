@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="Subfolder/subStyles.css">
+</head>
+<body>
+
+<h1>Javascript Intro</h1>
+<p>Here is a javascript button.</p>
+
+<script>
+function light(sw) {
+  var pic;
+  if (sw == 0) {
+    pic = "Images/moon.png"
+  } else {
+    pic = "Images/sun.png"
+  }
+  document.getElementById('myImage').src = pic;
+}
+</script>
+
+<img id="myImage" src="Images/sun.png" width="200" height="200">
+<p>
+<button type="button" onclick="light(1)">Daytime</button>
+<button type="button" onclick="light(0)">Nighttime</button>
+</p>
+<noscript>Sorry, your browser does not support JavaScript!</noscript>
+
+
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to create an Input Button with a "Click me" text.</p>
+
+<button onclick="buttonFunction()">Create Button</button>
+
+<h3>A demonstration of how to access a Checkbox</h3>
+
+Checkbox: <input type="checkbox" id="myCheck">
+
+<p>Click the "Try it" button to check the checkbox.</p>
+
+<button onclick="checkFunction()">Check</button>
+
+<h3>A demonstration of how to access a Color picker</h3>
+
+Select your favorite color: <input type="color" id="myColor">
+
+<p>Click the "Try it" button to get the color of the color picker.</p>
+
+<button onclick="colorFunction()">Try it</button>
+
+<p><b>Note:</b> type="color" is not supported in Internet Explorer 11 and earlier versions or Safari 9.1 and earlier versions.</p>
+
+<p id="hex"></p>
+
+<h3>A demonstration of how to access a Date field</h3>
+
+<input type="date" id="myDate" value="2014-02-09">
+
+<p>Click the button to get the date of the date field.</p>
+
+<button onclick="getDate()">Try it</button>
+
+<p id="date"></p>
+
+<h3>A demonstration of how to access an Email field</h3>
+
+E-mail: <input type="email" id="myEmail" value="john@example.com">
+
+<p>Click the button to get the e-mail address of the email field.</p>
+
+<button onclick="getEmail()">Try it</button>
+
+<p id="email"></p>
+
+
+<h3>A demonstration of how to access a File Upload Button</h3>
+
+<input type="file" id="myFile">
+
+<p>Click the "Try it" button to disable the file upload button.</p>
+
+<button onclick="disableUpload()">Try it</button>
+
+<h3>A demonstration of how to access a Password Field</h3>
+
+Password: <input type="password" id="myPsw" value="psw123">
+
+<p>Click the button to get the password of the password field.</p>
+
+<button onclick="getPassword()">Try it</button>
+
+<p id="password"></p>
+
+<h3>A demonstration of how to access a Slider Control</h3>
+
+<input type="range" id="myRange" value="90">
+
+<p>Click the button to get the value of the slider control.</p>
+
+<button onclick="getSlider()">Try it</button>
+
+<h3>A demonstration of how to access a Radio Button</h3>
+
+Radio Button: <input type="radio" id="myRadio">
+
+<p>Click the "Try it" button to check the radio button.</p>
+
+<button onclick="getRadio()">Try it</button>
+
+<p id="slider"></p>
+
+<h3>A demonstration of how to access a Text Field</h3>
+
+<input type="text" id="myText" value="Some text...">
+
+<p>Click the "Try it" button to get the text in the text field.</p>
+
+<button onclick="getText()">Try it</button>
+
+<p id="formText"></p>
+
+<h3>A demonstration of how to access a Week field</h3>
+
+<input type="week" id="myWeek" value="2014-W15">
+
+<p>Click the button to get the week and year of the week field.</p>
+
+<button onclick="getWeek()">Try it</button>
+
+<p><strong>Note:</strong> input elements with type="week" are not supported in IE11, Firefox, or Safari.</p>
+
+<p id="week"></p>
+
+<script>
+function buttonFunction() {
+  var x = document.createElement("INPUT");
+  x.setAttribute("type", "button");
+  x.setAttribute("value", "Click me");
+  document.body.appendChild(x);
+}
+
+function checkFunction() {
+  var x = document.getElementById("myCheck");
+  x.checked = true;
+}
+
+function colorFunction() {
+  var x = document.getElementById("myColor").value;
+  document.getElementById("hex").innerHTML = x;
+}
+
+function getDate() {
+  let x = document.getElementById("myDate").value;
+  document.getElementById("date").innerHTML = x;
+}
+
+function getEmail() {
+  var x = document.getElementById("myEmail").value;
+  document.getElementById("email").innerHTML = x;
+}
+
+function disableUpload() {
+  var x = document.getElementById("myFile");
+  x.disabled = true;
+}
+
+function getPassword() {
+  var x = document.getElementById("myPsw").value;
+  document.getElementById("password").innerHTML = x;
+}
+
+function getRadio() {
+  var x = document.getElementById("myRadio");
+  x.checked = true;
+}
+
+function getSlider() {
+  var x = document.getElementById("myRange").value;
+  document.getElementById("slider").innerHTML = x;
+}
+
+function getText() {
+  var x = document.getElementById("myText").value;
+  document.getElementById("formText").innerHTML = x;
+}
+
+function getWeek() {
+  var x = document.getElementById("myWeek").value;
+  document.getElementById("week").innerHTML = x;
+}
+</script>
+
+</body>
+</html>

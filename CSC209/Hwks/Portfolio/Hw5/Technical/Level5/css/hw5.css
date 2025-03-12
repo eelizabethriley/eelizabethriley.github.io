@@ -1,0 +1,18 @@
+* {
+	font-family: "Monaco", "Courier New", monospace;
+}
+
+body {
+	background-color: #e9e7e7 ;
+}
+
+h1 {
+	color: #2C2C2C;
+	font-family: "Monaco", "Courier New", monospace;
+	font-size: 200%;
+}
+
+#myCanvas {
+	border: 3px solid #bfbfbf;
+	border-radius: 4;
+}

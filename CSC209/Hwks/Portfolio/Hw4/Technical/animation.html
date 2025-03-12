@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link id="styleSheet" rel="stylesheet" href="css/animationStyle.css">
+        <title>Animation</title>
+        <script>
+            var squareColors = ["red", "blue", "green", "purple"];
+            var positionsVertical = ["0", "0", "350", "350"];
+            var positionsHorizontal = ["0", "350", "0", "350"];
+            const NUM_SQUARES = squareColors.length;
+        </script>
+        <script src="js/animation.js"></script>
+    </head>
+    <body>
+        <!-- Overall square controls -->
+        <label for="squareSpeed">Square speed</label>
+        <select id="squareSpeed">
+            <option value=30>Slow</option>
+            <option value=20>Medium</option>
+            <option value=10>Fast</option>
+        </select>
+        <button id="moveBtn" onclick="moveSquares();">Move squares</button> <br><br> 
+        <div id ="squareContainer">
+            <script>
+                createSquares();
+            </script>
+        </div>
+    </body>
+</html>

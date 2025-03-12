@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>HTML5 Canvas Intro</h1>
+
+<canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;">
+Sorry, your browser does not support canvas.
+</canvas>
+
+
+<script>
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
+ctx.fillStyle = "green";
+ctx.fillRect(210,210,80,80);
+// Define a new path
+ctx.beginPath();
+// Set a start-point
+ctx.moveTo(0,0);
+// Set an end-point
+ctx.lineTo(500,500);
+
+</script>
+</body>
+</html>
