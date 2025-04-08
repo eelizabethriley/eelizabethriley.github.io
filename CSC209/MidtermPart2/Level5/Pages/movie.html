@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link id="styleSheet" rel="stylesheet" href="../css/movie.css">
+</head>
+<body>
+	<h1>Particle Animation</h1>
+	<!-- Animation Controls -->
+    <label for="myNumber">Number:</label>
+    <input type="number" id="myNumber" value="0" min="0" onclick="setNumber();">
+    <br>
+    <label for="speed">Speed:</label>
+    <select id="speed">
+        <option value=30>Slow</option>
+        <option value=20>Medium</option>
+        <option value=10>Fast</option>
+    </select>
+    <label for="myCheck">Trace Path:</label>
+    <input type="checkbox" id="myCheck" onclick="setTrace();">
+    <br>
+	<button id="randomPos" onclick="randomizeParticles();">Randomize Locations</button> <label for="myBgCheck">Background:</label>
+    <input type="checkbox" id="myBgCheck" onclick="setBackground();"><br> 
+	<button id="animate" onclick="moveParticles();">Animate</button>
+	<button id="pause" onclick="stopAnimation();">Pause</button>
+	<button id="reset" onclick="resetPoints();stopAnimation();">Reset</button><br>
+	<canvas id="myCanvas" width="500" height="500">
+	Sorry, your browser does not support canvas.
+	</canvas>
+	<!-- Javascript -->
+	<script src="../js/movie.js"></script>
+	<script type="text/javascript">
+		const canvas = document.getElementById("myCanvas");
+		const ctx = canvas.getContext("2d");
+		const width = canvas.width;
+		const height = canvas.height;
+		var NRPTS = 0;
+		const NRSTEPS = 999999;
+		var TRACE = false;
+		var STOP = false;
+		const points = [];
+	</script>
+</body>
+</html>

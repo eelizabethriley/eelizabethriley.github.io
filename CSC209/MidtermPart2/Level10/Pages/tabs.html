@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/tabs.css">
+</head>
+<body>
+
+<h2>Tabs</h2>
+<p>Click on the buttons inside the tabbed menu:</p>
+
+<div id="tabContainer">
+  <div id="tabLinks" class="tab">
+  </div>
+</div>
+
+<script src="../js/tabs.js"></script>
+<script>
+  const cities = ["Dublin", "Paris", "Tokyo", "Santiago", "Oslo"];
+  const imgPaths = ["../images/ireland.png", "../images/france.jpg", "../images/japan.png", "../images/chile.png", "../images/norway.png"];
+  const content = ["Dublin is the capital city of Ireland", "Paris is the capital of France.", "Tokyo is the capital city of Japan.", "Santiago is the capital city of Chile.", "Oslo is the capital of Norway."];
+  const NRTABS = cities.length;
+  addAllTabs();
+</script>
+</body>
+</html> 

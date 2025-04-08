@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/accordion.css">
+</head>
+<body>
+
+<h2>Accordion with symbols</h2>
+<p>In this example we have added a "plus" sign to each button. When the user clicks on the button, the "plus" sign is replaced with a "minus" sign.</p>
+
+<div id = "accordionContainer"></div>
+
+<script src="../js/accordion.js"></script>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+const images = ["../images/guillermo-mota.jpg", "../images/sarah-olive.jpg", "../images/silje-midtgard.jpg", "../images/sunset.jpg"];
+const NRIMAGES = images.length;
+
+addAllSections();
+addEventListeners();
+
+</script>
+
+</body>
+</html>

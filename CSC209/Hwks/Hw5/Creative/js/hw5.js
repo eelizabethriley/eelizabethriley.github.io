@@ -9,7 +9,7 @@ function Particle(x, y, vector, color) {
   setDirection(this);
   drawParticle(x, y, vector, color);
 }
-
+//
 // Update the number of particles on the canvas.
 function setNumber(){
     let old = NRPTS;

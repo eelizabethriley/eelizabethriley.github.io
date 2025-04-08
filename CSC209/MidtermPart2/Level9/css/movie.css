@@ -1,0 +1,56 @@
+* {
+	font-family: "Monaco", "Courier New", monospace;
+	margin: 4px;
+}
+
+body {
+	background-color: #e9e7e7 ;
+}
+
+h1 {
+	color: #2C2C2C;
+	font-family: "Monaco", "Courier New", monospace;
+	font-size: 200%;
+}
+
+button {
+	background-color: #646464;
+	border: 0px solid white;
+	border-radius: 6px;
+	color: white;
+}
+
+button:hover {
+	background-color: blue;
+}
+
+input {
+	border: 2px solid #bfbfbf;
+	border-radius: 3px;
+}
+
+select {
+	border: 2px solid #bfbfbf;
+	border-radius: 3px;
+}
+
+
+#myCanvas {
+	border: 3px solid #bfbfbf;
+	border-radius: 4px;
+	background-color: white;
+}
+
+/* The container */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

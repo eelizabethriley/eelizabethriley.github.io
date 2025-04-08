@@ -1,0 +1,13 @@
+function addRow(FEATURE, BASIC, PRO){
+  let newRow = ROW;
+  newRow = newRow.replace("FEATURE", FEATURE);
+  newRow = newRow.replace("CHECKCROSSBASIC", "fa " + BASIC);
+  newRow = newRow.replace("CHECKCROSSPRO", "fa " + PRO);
+  document.getElementById("myTable").innerHTML += newRow;
+}
+
+function addAllRows(){
+  for (i = 0; i < NRROWS; i++){
+    addRow(FEATURES[i], BASIC[i], PRO[i]);
+  }
+}
