@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  flex: 50%;
+  padding: 30px;
+  height: 100vh; /* Should be removed. Only for demonstration */
+}
+
+.topheader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

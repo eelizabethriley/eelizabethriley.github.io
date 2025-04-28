@@ -1,8 +1,6 @@
 <?php
-
 $NRIMGS = 0;
 $images = glob("Images/*");
-print_r($images);
 $NRIMGS = count($images);
 ?>
 <html>
