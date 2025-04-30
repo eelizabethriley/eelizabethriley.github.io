@@ -20,7 +20,7 @@ Username: <input type="uname" name="uname"><br>
 Password: <input type="psw" name="psw"><br>
 <input type="submit">
 </form>
-<p>Not a user? Register <a href="register.html.php">here</a></p>
+<p>Not a user? Register <a href="register.html.php">here</a>.</p>
   </div>
   <div class="column" style="background-color:black;">
   </div>

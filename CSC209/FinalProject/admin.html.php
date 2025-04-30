@@ -29,16 +29,10 @@ $numUsers = count($users);
 <h1>Admin View</h1>
 <p>The number of users is: <span id="num"><?= $numUsers ?></span></p>
 
-<ul id="users">
-<?php foreach ($users as $user): ?>
-    <li><?= ($user["username"]) ?></li>
-<?php endforeach; ?>
-</ul>
-
 <table id="users">
 <tr>
-    <th>Usernames</th>
-    <th>Passwords</th>
+    <th>Username</th>
+    <th>Password</th>
 </tr>
 <?php foreach ($users as $user): ?>
 <tr>
@@ -55,21 +49,53 @@ function loadUsers() {
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function () {
         const users = JSON.parse(this.responseText);
-        document.getElementById("num").textContent = users.length;
+        document.getElementById("num").innerHTML = users.length;
 
-        const userList = document.getElementById("users");
-        userList.innerHTML = "";
+        let table = document.getElementById("users");
+        table.innerHTML = ""; 
 
-        users.forEach(user => {
-            const li = document.createElement("li");
-            li.textContent = user.username;
-            userList.appendChild(li);
-        });
+        let header = document.createElement("tr");
+        let userLabel = document.createElement("td");
+        userLabel.innerHTML = "Username";
+        header.appendChild(userLabel);
+        let passLabel = document.createElement("td");
+        passLabel.innerHTML = "Password";
+        header.appendChild(passLabel);
+        table.appendChild(header);
+        
+
+        for (let i = 0; i < users.length; i++) {
+            let row = document.createElement("tr");
+            let username = document.createElement("td");
+            username.innerHTML = users[i]["username"];
+            row.appendChild(username);
+            let password = document.createElement("td");
+            password.innerHTML = users[i]["password"];
+            row.appendChild(password);
+            let remove = document.createElement("td");
+            let removeButton = document.createElement("button");
+            removeButton.innerHTML = "Remove";
+            removeButton.onclick = function () {
+                removeUser(users[i]["username"]);
+            };
+            remove.appendChild(removeButton);
+            row.appendChild(remove);
+            table.appendChild(row);
+        }
     };
     xhttp.open("GET", "output/users.json", true);
     xhttp.send();
 }
-</script>
 
+function removeUser(username) {
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function () {
+        console.log(this.responseText);
+        loadUsers();
+    };
+    xhttp.open("POST", "removeUser.php", true);
+    xhttp.send("username=" + username);
+}
+</script>
 </body>
 </html>

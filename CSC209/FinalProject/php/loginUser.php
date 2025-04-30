@@ -25,6 +25,14 @@ if (file_exists($output)) {
         if ($user["username"] === $username && $user["password"] === $password) {
             $loginSuccess = true;
             $_SESSION["username"] = $username;
+            // Check for user file or make one
+            $userData = "../output/UserData/{$username}.json";
+            $lists = [];
+
+            if (!file_exists($userData)) {
+                $lists = ["lists" => []];
+                file_put_contents($userData, json_encode($lists));
+            }
             break;
         }
     }
