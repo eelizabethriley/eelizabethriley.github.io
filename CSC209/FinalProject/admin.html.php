@@ -1,6 +1,7 @@
 <?php
 session_start();
-if ($_SESSION["username"] != "admin") {
+$username = $_SESSION["username"];
+if ($username != "admin") {
 	echo("Access denied.");
     exit;
 }
@@ -13,7 +14,20 @@ if ($_SESSION["username"] != "admin") {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-
+<div class="topnav">
+  <a href="index.html.php">Home</a>
+  <a href="timer.html.php">Timer</a>
+  <?php if (isset($username)): ?>
+  <a href="todo.html.php">To Do</a>
+  <a href="profile.html.php">Profile</a>
+  <?php if ($username == "admin"): ?>
+  <a class="active" href="admin.html.php">Admin</a>
+  <?php endif; ?>
+  <a href="php/logout.php">Log Out</a>
+  <?php else: ?>
+  <a href="login.html.php">Login</a>
+  <?php endif; ?>
+</div>
 <?php
 $output = "output/users.json";
 $users = [];
@@ -43,6 +57,9 @@ $numUsers = count($users);
 </table>
 
 <button type="button" onclick="loadUsers()">Update</button>
+<div class="footer">
+  <p>Created by Erin Riley 2025</p>
+</div>
 
 <script>
 function loadUsers() {

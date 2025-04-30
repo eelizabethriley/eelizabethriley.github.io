@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (isset($_SESSION["username"])){
+	$username = $_SESSION["username"];
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,10 +16,19 @@
 <div class="topnav">
   <a href="index.html.php">Home</a>
   <a class="active" href="timer.html.php">Timer</a>
+  <?php if (isset($_SESSION["username"])): ?>
+  <a href="todo.html.php">To Do</a>
+  <a href="profile.html.php">Profile</a>
+  <?php if ($username == "admin"): ?>
+  <a href="admin.html.php">Admin</a>
+  <?php endif; ?>
+  <a href="php/logout.php">Log Out</a>
+  <?php else: ?>
   <a href="login.html.php">Login</a>
+  <?php endif; ?>
 </div>
-	
 	<h1 class="topheader">Productivity Timer</h1>
+	<br><br>
 	<div class="main-container center">
 		<!-- Progress Bar -->
 		<div class="progress-container center">
@@ -28,34 +44,28 @@
 			</div>
 		</div>
 		<br>
-	</div>
+	</div><br><br><br><br>
 <!-- Controls -->
 	<div class="controls center">
 		<input type="number" value="0" min="0" name="minutes" id="minutes" onclick="setNumber();">
 		<button id="start" onclick="beginCount();">Start</button>
-		<button id="start" onclick="clearInterval(countDownTimer);">Clear</button>
+		<button id="end" onclick="clearTimer();">End</button>
 	</div>
-
+	<br><br>
+<div class="footer">
+  <p>Created by Erin Riley 2025</p>
+</div>
 <script src="js/timer.js"></script>
 <script>
-	const circles = document.querySelectorAll('.semicircle');
-	const timer = document.querySelector('.timer');
+	let circles = document.querySelectorAll('.semicircle');
+	let timer = document.querySelector('.timer');
+	let inputTime
+	let endTime;
+	let timerLoop;
 // Input time
 	let hr = 0;
-	let min = 0;
+	let min = 2;
 	let sec = 0;
-// Convert time to miliseconds 
-	const hours = hr * 3600000;
-	const minutes = min * 60000;
-	const seconds = sec * 1000;
-	const inputTime = hours + minutes + seconds;
-	const startTime = Date.now();
-	const endTime = startTime + inputTime;
-
-	let timerLoop;
-// Call timer countdown incrementally
-	// const timerLoop = setInterval(countDownTimer);
-	// countDownTimer();
 </script>
 </body>
 </html>

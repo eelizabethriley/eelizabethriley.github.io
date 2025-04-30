@@ -9,6 +9,16 @@ input {
 	border-radius: 30px;
 }
 
+button {
+	color: white;
+	background-color: var(--accent-color);
+	border-style: none;
+	font-size: 25px;
+	border-radius: 10px;
+	padding: 7px;
+	margin: 5px;
+}
+
 .center{
 	display: flex;
 	justify-content: center;

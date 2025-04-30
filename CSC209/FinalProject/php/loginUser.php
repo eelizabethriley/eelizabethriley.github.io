@@ -1,4 +1,9 @@
-<!-- REFERENCE: https://www.geeksforgeeks.org/php-sessions/ -->
+<?php
+session_start();
+if (isset($_SESSION["username"])){
+  $username = $_SESSION["username"];
+}
+?>
 
 <html>
 <head>
@@ -6,8 +11,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+<div class="topnav">
+  <a href="../index.html.php">Home</a>
+  <a href="../timer.html.php">Timer</a>
+  <?php if (isset($_SESSION["username"])): ?>
+  <a class="active" href="../todo.html.php">To Do</a>
+  <a href="../profile.html.php">Profile</a>
+  <?php if ($username == "admin"): ?>
+  <a href="../admin.html.php">Admin</a>
+  <?php endif; ?>
+  <a href="logout.php">Log Out</a>
+  <?php else: ?>
+  <a href="login.html.php">Login</a>
+  <?php endif; ?>
+</div>
 <?php
-session_start();
 
 $output = "../output/users.json";
 $loginSuccess = false;
@@ -30,8 +48,11 @@ if (file_exists($output)) {
             $lists = [];
 
             if (!file_exists($userData)) {
-                $lists = ["lists" => []];
-                file_put_contents($userData, json_encode($lists));
+                    $userInfo = [
+                        "lists" => [],
+                        "history" => []
+                    ];
+                file_put_contents($userData, json_encode($userInfo));
             }
             break;
         }
@@ -39,7 +60,7 @@ if (file_exists($output)) {
 }
 
 if ($loginSuccess) {
-    $message = "Login successful. Welcome, " . htmlspecialchars($username) . "!";
+    $message = "Login successful. Welcome, " . ($username) . "!";
 } else {
     $message = "Login failed. Invalid username or password.";
 }

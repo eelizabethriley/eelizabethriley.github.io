@@ -5,9 +5,23 @@ function setNumber(){
 }
 
 function beginCount(){
-	console.log(min);
-	clearInterval(countDownTimer);
-	const timerLoop = setInterval(countDownTimer);
+clearInterval(timerLoop);
+    const hr = 0;
+    const sec = 0;
+    inputTime = (hr * 3600000) + (min * 60000) + (sec * 1000);
+    const startTime = Date.now();
+    endTime = startTime + inputTime;
+    timerLoop = setInterval(countDownTimer, 1000);
+    countDownTimer();
+}
+
+function clearTimer() {
+    clearInterval(timerLoop);
+    timer.innerHTML = '<div>00</div><div class="colon">:</div><div>00</div><div class="colon">:</div><div>00</div>';
+    timer.style.color = "white";
+    circles[0].style.transform = 'rotate(0deg)';
+    circles[1].style.transform = 'rotate(0deg)';
+    circles[2].style.display = 'block';
 }
 
 function countDownTimer(){

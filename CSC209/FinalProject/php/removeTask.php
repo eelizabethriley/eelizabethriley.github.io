@@ -8,7 +8,7 @@ $userData = "../output/UserData/{$username}.json";
 if (file_exists($userData)) {
     $data = file_get_contents($userData);
     $lists = json_decode($data, true);
-
+    
     // Access by reference to modify directly
     foreach ($lists["lists"] as &$list) {
         if ($list["label"] === $listLabel) {

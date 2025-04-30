@@ -3,6 +3,7 @@
 
 :root {
   --background: #545454;
+  --dark-grey: #464646;
   --accent-color: #CC2872;
   --text-color: white;
 }
@@ -26,10 +27,15 @@ button {
 	color: white;
 	background-color: var(--accent-color);
 	border-style: none;
-	font-size: 25px;
+	font-size: 10px;
 	border-radius: 10px;
-	padding: 7px;
-	margin: 5px;
+	padding: 5px;
+	margin: 2px;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
 }
 
 .topnav {
@@ -59,4 +65,15 @@ button {
 .topheader {
 	padding: 10px;
 	margin-top: 20px;
+}
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: var(--dark-grey);
+   color: white;
+   font-size: 10px;
+   text-align: center;
 }
