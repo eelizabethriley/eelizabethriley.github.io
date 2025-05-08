@@ -111,6 +111,7 @@ function removeUser(username) {
         loadUsers();
     };
     xhttp.open("POST", "removeUser.php", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("username=" + username);
 }
 </script>

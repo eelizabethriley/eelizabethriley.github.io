@@ -7,8 +7,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (file_exists($filePath)) {
         $users = json_decode(file_get_contents($filePath), true);
         $updatedUsers = [];
+
         foreach ($users as $user) {
-            if ($user["username"] !== $usernameToDelete) {
+            if ($user["username"] !== $removedUser) {
                 $updatedUsers[] = $user;
             }
         }
@@ -18,5 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     } else {
         echo "Error: file not found.";
     }
+} else {
+    echo "Invalid request method.";
 }
 ?>

@@ -28,7 +28,7 @@ if (isset($_SESSION["username"])){
   <?php endif; ?>
 </div>
 	<h1 class="topheader">Productivity Timer</h1>
-	<br><br>
+	<br><br>	<br><br>
 	<div class="main-container center">
 		<!-- Progress Bar -->
 		<div class="progress-container center">
