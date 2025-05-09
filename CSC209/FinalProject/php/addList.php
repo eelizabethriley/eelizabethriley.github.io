@@ -1,6 +1,11 @@
 <?php
 session_start();
-$username = $_SESSION["username"];
+if (isset($_SESSION["username"])){
+  $username = $_SESSION["username"];
+}
+else {
+  $username = "guest";
+}
 $label = $_POST["listName"];
 $userData = "../output/UserData/{$username}.json";
 

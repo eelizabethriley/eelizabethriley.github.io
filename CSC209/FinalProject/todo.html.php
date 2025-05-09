@@ -1,7 +1,12 @@
 <?php
 session_start();
-$username = $_SESSION["username"];
-$userData = "output/UserData/{$username}.json";
+if (isset($_SESSION["username"])){
+  $username = $_SESSION["username"];
+}
+else {
+  $username = "guest";
+}
+$userData =  "output/UserData/{$username}.json";
 $numLists = 0;
 
 if (file_exists($userData)) {
@@ -12,7 +17,7 @@ if (file_exists($userData)) {
 ?>
 <!-- Code adapted from W3schools https://www.w3schools.com/howto/howto_js_todolist.asp -->
 <!DOCTYPE html>
-<html>
+<html>  
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -22,8 +27,8 @@ if (file_exists($userData)) {
 <div class="topnav">
   <a href="index.html.php">Home</a>
   <a href="timer.html.php">Timer</a>
-  <?php if (isset($username)): ?>
   <a class="active" href="todo.html.php">To Do</a>
+  <?php if (isset($_SESSION["username"])): ?>
   <a href="profile.html.php">Profile</a>
   <?php if ($username == "admin"): ?>
   <a href="admin.html.php">Admin</a>
@@ -67,7 +72,7 @@ New List: <input type="listName" name="listName">
                   <input type="hidden" name="listLabel" value="<?= $list['label'] ?>">
                   <input type="hidden" name="taskName" value="<?= ($task) ?>">
                   <button type="submit" class="check" title="Mark as done">✔</button>
-                </form>
+                </form>        
                 <form action="php/removeTask.php" method="POST" style="display:inline;">
                     <input type="hidden" name="listLabel" value="<?= ($list['label']) ?>">
                     <input type="hidden" name="taskName" value="<?= ($task) ?>">

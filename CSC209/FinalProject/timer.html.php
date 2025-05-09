@@ -16,8 +16,8 @@ if (isset($_SESSION["username"])){
 <div class="topnav">
   <a href="index.html.php">Home</a>
   <a class="active" href="timer.html.php">Timer</a>
-  <?php if (isset($_SESSION["username"])): ?>
   <a href="todo.html.php">To Do</a>
+  <?php if (isset($_SESSION["username"])): ?>
   <a href="profile.html.php">Profile</a>
   <?php if ($username == "admin"): ?>
   <a href="admin.html.php">Admin</a>
@@ -59,12 +59,12 @@ if (isset($_SESSION["username"])){
 <script>
 	let circles = document.querySelectorAll('.semicircle');
 	let timer = document.querySelector('.timer');
-	let inputTime
+	let inputTime;
 	let endTime;
 	let timerLoop;
 // Input time
 	let hr = 0;
-	let min = 2;
+	let min = 0;
 	let sec = 0;
 </script>
 </body>

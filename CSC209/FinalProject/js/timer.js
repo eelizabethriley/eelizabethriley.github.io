@@ -1,14 +1,19 @@
 // TIMER CODE REFERENCE: EFTtechLab on YouTube https://youtu.be/uHVPAcaW1VQ?si=XGGLZOohlAOdqDjm
 
+//Update the time based on user input
 function setNumber(){
 	min = document.getElementById("minutes").value;
+	hr = Math.floor(min/60);
+	min = min%60;
+	sec = 0;
+	console.log("hr", hr, "min", min);
 }
 
 function beginCount(){
-clearInterval(timerLoop);
-    const hr = 0;
-    const sec = 0;
+	setNumber();
+	clearInterval(timerLoop);
     inputTime = (hr * 3600000) + (min * 60000) + (sec * 1000);
+    console.log(inputTime);
     const startTime = Date.now();
     endTime = startTime + inputTime;
     timerLoop = setInterval(countDownTimer, 1000);
@@ -17,11 +22,15 @@ clearInterval(timerLoop);
 
 function clearTimer() {
     clearInterval(timerLoop);
+    hr = 0;
+    min = 0;
+    sec = 0;
     timer.innerHTML = '<div>00</div><div class="colon">:</div><div>00</div><div class="colon">:</div><div>00</div>';
     timer.style.color = "white";
     circles[0].style.transform = 'rotate(0deg)';
     circles[1].style.transform = 'rotate(0deg)';
     circles[2].style.display = 'block';
+    setNumber();
 }
 
 function countDownTimer(){
@@ -44,7 +53,7 @@ function countDownTimer(){
 		circles[1].style.transform = 'rotate('+ angle +'deg)'
 	}
 
-	// Numeric timer
+	// Numeric timer; display 2 digits
 	const hrs = Math.floor((remainingTime / (1000 * 60 * 60)) % 24).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false});
 	const mins = Math.floor((remainingTime / (1000 * 60) % 60)).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false});;
 	const secs = Math.floor((remainingTime / 1000) % 24).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false});;
@@ -56,7 +65,7 @@ function countDownTimer(){
 		timer.style.color = "red";
 	}
 
-	// End the countdown
+	// End the countdown, turn the timer yellow to indicate it finished
 	if (remainingTime < 0){
 		clearInterval(timerLoop);
 

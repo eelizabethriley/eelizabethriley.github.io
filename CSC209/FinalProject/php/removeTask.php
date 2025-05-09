@@ -1,6 +1,11 @@
 <?php
 session_start();
-$username = $_SESSION["username"];
+if (isset($_SESSION["username"])){
+  $username = $_SESSION["username"];
+}
+else {
+  $username = "guest";
+}
 $listLabel = $_POST["listLabel"]; 
 $taskToRemove = $_POST["taskName"];
 $userData = "../output/UserData/{$username}.json";
