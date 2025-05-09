@@ -48,14 +48,14 @@ if (file_exists($output)) {
   <a href="../index.html.php">Home</a>
   <a href="../timer.html.php">Timer</a>
   <?php if (isset($_SESSION["username"])): ?>
-  <a class="active" href="../todo.html.php">To Do</a>
+  <a href="../todo.html.php">To Do</a>
   <a href="../profile.html.php">Profile</a>
   <?php if ($username == "admin"): ?>
   <a href="../admin.html.php">Admin</a>
   <?php endif; ?>
   <a href="logout.php">Log Out</a>
   <?php else: ?>
-  <a href="login.html.php">Login</a>
+  <a class="active" href="login.html.php">Login</a>
   <?php endif; ?>
 </div>
 <?php

@@ -6,17 +6,15 @@ function setNumber(){
 	hr = Math.floor(min/60);
 	min = min%60;
 	sec = 0;
-	console.log("hr", hr, "min", min);
 }
 
 function beginCount(){
 	setNumber();
 	clearInterval(timerLoop);
     inputTime = (hr * 3600000) + (min * 60000) + (sec * 1000);
-    console.log(inputTime);
-    const startTime = Date.now();
+    startTime = Date.now();
     endTime = startTime + inputTime;
-    timerLoop = setInterval(countDownTimer, 1000);
+    timerLoop = setInterval(countDownTimer, 100);
     countDownTimer();
 }
 
@@ -56,7 +54,7 @@ function countDownTimer(){
 	// Numeric timer; display 2 digits
 	const hrs = Math.floor((remainingTime / (1000 * 60 * 60)) % 24).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false});
 	const mins = Math.floor((remainingTime / (1000 * 60) % 60)).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false});;
-	const secs = Math.floor((remainingTime / 1000) % 24).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false});;
+	const secs = Math.floor((remainingTime / 1000) % 60).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false});;
 	timer.innerHTML = 
 	'<div>' + hrs + '</div> <div class="colon">:</div> <div>' + mins + '</div> <div class="colon">:</div> <div>' + secs + '</div>'
 
@@ -66,7 +64,7 @@ function countDownTimer(){
 	}
 
 	// End the countdown, turn the timer yellow to indicate it finished
-	if (remainingTime < 0){
+	if (remainingTime <= 0){
 		clearInterval(timerLoop);
 
 		// Set timer digits to 0

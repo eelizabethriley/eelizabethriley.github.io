@@ -60,6 +60,7 @@ if (isset($_SESSION["username"])){
 	let circles = document.querySelectorAll('.semicircle');
 	let timer = document.querySelector('.timer');
 	let inputTime;
+	let startTime;
 	let endTime;
 	let timerLoop;
 // Input time

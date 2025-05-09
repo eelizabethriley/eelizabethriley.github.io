@@ -15,11 +15,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
 
         file_put_contents($filePath, json_encode(array_values($updatedUsers)));
-        echo "User was successfully deleted.";
+        echo "User was deleted successfully.";
     } else {
         echo "Error: file not found.";
     }
-} else {
-    echo "Invalid request method.";
 }
 ?>

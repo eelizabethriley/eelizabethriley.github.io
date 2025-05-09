@@ -7,12 +7,12 @@ else {
   $username = "guest";
 }
 $userData = "output/UserData/{$username}.json";
-$numLists = 0;
+$numTasks = 0;
 
 if (file_exists($userData)) {
     $data = file_get_contents($userData);
     $lists = json_decode($data, true);
-    $numLists = count($lists);
+    $numTasks = count($lists["history"]);
 }
 ?>
 <!DOCTYPE html>
@@ -40,6 +40,7 @@ if (file_exists($userData)) {
     <h1 class="topheader"><?php echo $username ?>'s Profile</h1>
 <div>
 <h3>Task History</h3>
+<p>Completed tasks: <span id="num"><?= $numTasks ?></span></p>
 <ul>
 <?php foreach ($lists["history"] as $done): ?>
   <li><?= htmlspecialchars($done["task"]) ?> (from <?= $done["completedFrom"] ?>)</li>

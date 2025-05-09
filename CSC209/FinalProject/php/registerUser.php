@@ -38,7 +38,7 @@ file_put_contents("../output/users.json", json_encode($users));
   <a href="../todo.html.php">To Do</a>
   <a href="../profile.html.php">Profile</a>
   <?php if ($username == "admin"): ?>
-  <a href="../admin.html.php">Admin</a>
+  <a href="../admin.html.php">Admin</a> 
   <?php endif; ?>
   <a href="logout.php">Log Out</a>
   <?php else: ?>

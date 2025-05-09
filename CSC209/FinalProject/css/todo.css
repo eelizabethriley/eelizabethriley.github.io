@@ -97,10 +97,11 @@ ul li.checked::before {
   left: 0px;
   top: 0;
   padding: 12px 16px 12px 16px;
+  background-color: orange;
 }
 
 .closeList:hover {
-  background-color: orange;
+  background-color: red;
   color: white;
 }
 
